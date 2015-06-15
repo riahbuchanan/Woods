@@ -1,0 +1,52 @@
+<h1>Troubles</h1>
+
+
+<div class="forms">
+
+<%= form_for @trouble do |f| %>
+
+ 
+  <%= f.label :email %>  <br>
+  <%= f.email_field :email, :size => 30  %>
+  <br><br>
+
+   <%= f.label :date %>  <br>
+  <%= f.date_field :date %>
+  <br><br>
+
+     <%= f.label :time %>  <br>
+  <%= f.time_field :time %>
+  <br><br>
+
+
+  <%= f.label :title %> <br>
+  <%= f.text_field :title, :size => 30 %>
+  <br><br>
+
+ 
+<%= f.label "Location" %> <br>
+  <%= collection_select(:name, :location_id, Location.all, :id, :name, {:include_blank => 'Please select nearest'}) %>
+  <br><br>
+
+  <%= f.label "Description"  %> <br>
+  <%= f.text_area :description, :placeholder => "Please describe who is or was in trouble. Include information on injuries, missing hikers and/or rescued hikers if you have it. Avoid judgement if possible. Let us know if any rescues were performed.", :cols => 30, :rows => 10 %>
+  <br>
+
+<p> Has the situation been resolved? </p>
+    <%= f.label "Yes" %>
+  <%= f.radio_button :resolved, true %>
+
+      <%= f.label "No" %>
+  <%= f.radio_button :resolved, false %>
+
+<br><br>
+<!-- 
+  <%= f.label :images %>
+  <%= f.file_field :images %>
+  <br><br> -->
+
+  <%= f.submit 'Report Trouble ' %>
+
+<% end %>
+
+</div>

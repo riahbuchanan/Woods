@@ -1,0 +1,73 @@
+
+<link href='http://fonts.googleapis.com/css?family=Alegreya:400,700' rel='stylesheet' type='text/css'>
+
+<h1> Woods Report </h1>
+
+
+	<div> 
+		<ul>
+			<!-- <li> <a href="/home"> NEWS </a></li> -->
+			<li> <a href="/sightings/new"> REPORT SIGHTINGS </a></li>
+			<li> <a href="/troubles/new"> REPORT TROUBLES </a></li>
+		</ul>
+
+	</div>
+
+<!-- Rails.application.secrets.secret_google_maps_key -->
+
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat: 34.05, lng: -118.25},
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+
+<h1> </h1>
+<div id="map-container">
+  <div id="map-canvas"></div>
+</div>
+
+<!-- 
+//create marker for map -->
+
+ <script type="text/javascript"
+
+function createImage(url){
+  var image = {
+    url: url,
+    <!-- // This marker is 32 pixels wide by 32 pixels tall. -->
+    size: new google.maps.Size(32, 32),
+    // The origin for this image is 0,0.
+    origin: new google.maps.Point(0,0),
+    // The anchor for this image is the base of the flagpole at 0,32.
+    anchor: new google.maps.Point(0, 32)
+  };
+  return image;
+}
+
+<!-- 
+//custom image for marker -->
+
+function createCustomMarker(coords,map,title){
+  marker = new google.maps.Marker({
+    position: coords,
+    map: map,
+    title: title,
+    icon: createImage("/assets/images/blue_triangle.png")
+  });
+}
+
+ </script>
+
+
+
+
