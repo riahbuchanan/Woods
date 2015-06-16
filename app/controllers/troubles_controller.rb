@@ -37,7 +37,7 @@ def create
 	@trouble = Trouble.new(trouble_params)
 
     if @trouble.save
-      redirect_to '/'
+      redirect_to '/map'
     else
       render :new
     end

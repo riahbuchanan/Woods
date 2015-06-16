@@ -44,3 +44,5 @@ group :development, :test do
 end
 
 gem 'figaro'
+
+gem 'gmaps4rails'

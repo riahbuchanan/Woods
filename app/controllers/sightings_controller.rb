@@ -35,12 +35,14 @@ def create
 	@sighting = Sighting.new(sighting_params)
 
     if @sighting.save
-      redirect_to '/'
+      redirect_to '/map'
     else
       render :new
     end
 
   end
+
+
 
 
   private

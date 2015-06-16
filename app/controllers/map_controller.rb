@@ -1,17 +1,15 @@
-class HomeController < ApplicationController
+class MapController < ApplicationController
 
 
 
 
 
-	def home
+	def map
 		@sightings = Sighting.all 
 		@troubles = Trouble.all
 
 	end
 
-
-	
 
 
 end
