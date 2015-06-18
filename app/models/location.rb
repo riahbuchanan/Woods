@@ -1,7 +1,7 @@
 class Location < ActiveRecord::Base
 
-	belongs_to :sighting
+has_many :sighting
 
-	belongs_to :trouble
+has_many :trouble
 
 end

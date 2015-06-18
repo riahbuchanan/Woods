@@ -56,9 +56,10 @@ function createSidebar(json_array){
 handler = Gmaps.build('Google');
 handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
   var json_array = [
-    { lat: 34.1372315, lng: -118.2794049, name: 'Griffith Park', infowindow: "This is Griffith" },
-    { lat: 34.3333332, lng: -118.6009211, name: 'Santa Susana Mtns', infowindow: "This is the Santa Susana" },
-    { lat: 34.3346392, lng: -118.15907859999999, name: 'Angeles National Forest', infowindow: "This is the Angeles" }
+  
+  
+    // { lat: 34.1372315, lng: -118.2794049, name: 'Griffith Park', infowindow: "This is Griffith" },
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
   ];
 
   var markers = handler.addMarkers(json_array);
